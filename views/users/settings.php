@@ -1,40 +1,32 @@
 <!--user controll panel to upload profile image-->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Settings</h3>
-  </div>
-  <div class="panel-body">
+<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+  <div class="contact-form">
     <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
       <div class="form-group">
-    		  <label>User</label>
           <?php $username = $_SESSION['user_data']['name']; ?>
+          <?php $email = $_SESSION['user_data']['email']; ?>
     	    <input type="text" name="name" value="<?php echo $username; ?>" class="form-control"/>
       </div>
     	<div class="form-group">
-    		<label>Email</label>
-    		<input type="text" name="email" placeholder="<?php echo $_SESSION['user_data']['email']; ?>" class="form-control" />
+    		<input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $_SESSION['user_data']['email']; ?>" class="form-control" />
     	</div>
       <!--
       change profile picture
       standard picture is set on registration
       -->
       <div class="form-group">
-    		<label>Profile Picture</label>
     		<input type="text" name="image" placeholder="will be enabled as soon as ok" class="form-control" />
     	</div>
     	<div class="form-group">
-    		<label>Old Password</label>
-    		<input type="password" name="password" class="form-control" />
+    		<input type="password"  placeholder="Old Password" name="password" class="form-control" />
     	</div>
       <div class="form-group">
-    		<label>New Password</label>
-    		<input type="password" name="newpassword" class="form-control" />
+    		<input type="password" placeholder="New Password" name="newpassword" class="form-control" />
     	</div>
       <div class="form-group">
-    		<label>Conform New Password</label>
-    		<input type="password" name="confirmpassword" class="form-control" />
+    		<input type="password" placeholder="Confirm New Password" name="confirmpassword" class="form-control" />
     	</div>
-    	<input class="btn btn-primary" name="submit" type="submit" value="Submit" />
+    	<button type="submit" name="submit" value="Submit" class="btn btn-primary btn-submit">SAVE CHANGES</button>
     </form>
   </div>
 </div>

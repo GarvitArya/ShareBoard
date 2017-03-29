@@ -51,11 +51,6 @@ class UserModel extends Model{
 				header('Location: '.ROOT_URL.'shares');
 			} else {
 				Messages::setMsg('Incorrect Login', 'error');
-				 var_dump($password);
-				 if("5f4dcc3b5aa765d61d8327deb882cf99" == md5($post['password'])){
-					 echo "passt";
-				 }
-				 else{ echo "5f4dcc3b5aa765d61d8327deb882cf99"." == ".md5($post['password']); }
 			}
 		}
 		return;

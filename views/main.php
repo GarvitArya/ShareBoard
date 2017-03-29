@@ -66,12 +66,20 @@
 	            </div>
 
 						<?php elseif($uri == ROOT_PATH."users/login") :?>
-							<div class="">
+							<div class="banner-info text-center">
+								<?php Messages::display(); ?>
+								<?php require($view); ?>
+							</div>
+
+						<?php elseif($uri == ROOT_PATH."users/settings") :?>
+							<div class="banner-info text-center">
+								<?php Messages::display(); ?>
 								<?php require($view); ?>
 							</div>
 
 						<?php elseif($uri == ROOT_PATH."users/register") : ?>
-						<div class="">
+						<div class="banner-info text-center">
+							<?php Messages::display(); ?>
 							<?php require($view); ?>
 						</div>
 							<?php endif; ?>
@@ -84,15 +92,26 @@
     <div class="container">
 
      <div class="row">
-      <?php Messages::display(); ?>
+
 			<?php if($uri != ROOT_PATH."users/login"  ) :?>
 				<?php if($uri != ROOT_PATH."users/register") :?>
-     			<?php require($view); ?>
+					<?php if($uri != ROOT_PATH."users/settings") :?>
+						<?php Messages::display(); ?>
+     				<?php require($view); ?>
+					<?php endif; ?>
 				<?php endif; ?>
 			<?php endif; ?>
      </div>
 
     </div><!-- /.container -->
+		<section id="contact" class="section-padding">
+		 <div class="container">
+			 <div class="row">
+
+
+			 </div>
+		 </div>
+	 </section>
 		<footer id="footer">
 	<div class="container">
 		<div class="row text-center">

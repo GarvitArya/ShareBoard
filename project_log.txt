@@ -1,0 +1,41 @@
+installation:
+
+-download and place folder "projectname"
+-in config.pop change the root_url to localhost/projectname
+-change root path tp "/projectname/"
+-start server
+
+changes
+1.) copied project to php7website_logs and named it php7website _ original- 28.03.17
+2.) create in views/users a controll-user-panel "settings.php"
+  - put in <?php echo $item['title']; ?> from database
+  - aber noch ausgeklammert
+3.) im user modell neue function: settings
+4.) change nav ->add settings link in main.php
+5.) in users contoroller add function settings
+
+
+Anmerkungen:
+zu punkt 2: passwort muss nicht unbedingt eingetragen werden
+so einstellen dass man nutzername n nicht mehr ändern kann sonst wird das in der settingsdfunction schwierig
+beim login muss abgefragt werden ob eine mail oder name schon registriert ist
+in index.php wird noch user_id angezeigt aber ich brauche den namen
+in settings function muss abgefrag werden ob neue email bereits vorhanden ist
+name kann nicht disabled werden
+
+
+<?php foreach($viewmodel as $item) : ?>
+  <div class="row-fluid">
+    <div class="col-md-2">
+      <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
+    </div>
+    <div class="col-md-10">
+      <h3><?php echo $item['title']; ?></h3>
+      <small><?php echo $item['create_date'] ." ,by ". $item['user_id'];?></small>
+      <br />
+      <p><?php echo $item['body']; ?></p>
+      <br />
+      <a class="btn btn-default" href="<?php echo $item['link']; ?>" target="_blank">Go To Website</a>
+    </div>
+  </div>
+<?php endforeach; ?>
