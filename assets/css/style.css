@@ -7,31 +7,21 @@ body {
     font-weight: 300;
     letter-spacing: 0.5px;
     overflow-x: hidden;
+		background:#eee;
 }
 ol, ul {
 	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 h1, h2, h3, h4, h5, h6{
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
 }
 
-
+/********************/
+/***SHOWCASE*********/
+/*******************/
 .header{
-    background: url('https://static.pexels.com/photos/103127/pexels-photo-103127.jpeg') no-repeat fixed;
-		/* alternative image: https://s17.postimg.org/z7t2yhfpb/showcase_for_shareboard.jpg */
+		background: url('https://static.pexels.com/photos/2752/city-sunny-people-street.jpg') no-repeat fixed;
 		background-size: cover;
     min-height: 650px;
     position: relative;
@@ -42,32 +32,30 @@ h1, h2, h3, h4, h5, h6{
     min-height: 650px;
 }
 
+/*******************/
+/****NAVBAR********/
+/******************/
+
 .navbar-default {
     background-color: transparent;
     border:0px;
     padding: 20px 0;
-    transition: all 0.3s;
 }
 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover
 {
     color: #002F2F;
 }
-
-.top-nav-collapse {
-    padding: 0;
-    background: rgba(64,75,97, 0.9);
-}
-
-.logo-dec
-{
-    color: #be9e21;
-}
 .navbar-default .navbar-brand {
     color: #fff;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
 }
+.logo-dec
+{
+    color: #be9e21; //organge
+}
+
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
 {
     color: #fff;
@@ -103,7 +91,12 @@ h1, h2, h3, h4, h5, h6{
     color: #fff;
 }
 
-.btn-download, .btn-more, .btn-download:hover, .btn-download:focus, .btn-more:focus
+/*******************/
+/****BUTTONS********/
+/******************/
+
+/*****filled out orange button ******/
+.btn-download, .btn-download:hover, .btn-download:focus
 {
     text-transform: uppercase;
     margin-top: 50px;
@@ -119,6 +112,7 @@ h1, h2, h3, h4, h5, h6{
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: all 0.3s;
+		margin-bottom: 40px;
 }
 
 .btn-download
@@ -126,22 +120,42 @@ h1, h2, h3, h4, h5, h6{
     background-color: #be9e21;
 }
 
+/****transparent button with orange border ***/
 .btn-submit, .btn-submit:hover, .btn-submit:focus
 {
-    background-color: transparent;
+  /*  background-color: transparent; */
+		background-color: rgba(0, 0, 0, 0.3);
     border-radius: 60px;
     color: #be9e21;
-    font-weight: 400;
+    font-weight: 600;
     border: 1px solid #be9e21;
-    font-size: 14px;
+    font-size: 15px;
     padding: 6px 20px;
 }
+
+/****image upload****/
+#button-file {
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 30px;
+	color: #be9e21;
+	font-weight: 400;
+	border: 1px solid #be9e21;
+	font-size: 15px;
+	padding: 6px 20px;
+}
+
+/********************/
+/****FORMS**********/
+/******************/
+
 .form-control
 {
-    background-color: transparent;
+		background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0px;
     color: #be9e21 !important;
     border-color: #be9e21;
+		font-size:16px;
+		font-weight: bolder;
 }
 .form-control:focus {
     border-color: #be9e21;
@@ -152,7 +166,6 @@ h1, h2, h3, h4, h5, h6{
 .contact-form input.form-control{
     color: #fff;
 }
-
 .validation {
     color: red;
     display:none;
@@ -160,6 +173,11 @@ h1, h2, h3, h4, h5, h6{
     font-weight:400;
     font-size:13px;
 }
+
+
+/********************/
+/****FOOTER**********/
+/******************/
 
 #footer
 {

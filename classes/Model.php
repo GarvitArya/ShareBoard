@@ -1,14 +1,13 @@
 <?php
+/*************************************************
+DATABASE Model
+provides functions for interaction with DATABASE
+************************************************/
+
 abstract class Model{
 	protected $dbh;
 	protected $stmt;
-/*
-* instanciate new PDO
-* prepare query
-* bind parameter
-* execute
-* return results
-*/
+
 	public function __construct(){
 		$this->dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
 	}

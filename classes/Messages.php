@@ -1,4 +1,5 @@
 <?php
+/*error messages will appear above forms*/
 class Messages{
 	public static function setMsg($text, $type){
 		if($type == 'error'){

@@ -1,0 +1,88 @@
+/*******************/
+/****SHARES********/
+/******************/
+/*space between shares and showcase bottom border*/
+.space {
+  margin-top: 50px; }
+
+/*Speech bubbles*/
+.bubble {
+  padding: 20px;
+  position: relative;
+  width: 320px;
+  border-radius: 10px; }
+  .bubble a, .bubble a:hover, .bubble a:visited {
+    text-decoration: none;
+    color: black; }
+
+/*speech bubble triangle*/
+.bubble:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 40px;
+  border: 15px transparent solid;
+  border-top-color: #DDCCA6 !important; }
+
+/*round user profile image below speech bubble*/
+#profile {
+  height: 110px;
+  width: 110px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-left: 14px;
+  margin-top: 5px; }
+
+/* complete section of speech bubble + user image */
+.share {
+  margin-bottom: 30px;
+  font-size: 14; }
+
+/************************/
+/****USER IMAGES********/
+/**********************/
+/* round user profile images of new memebers on homepage*/
+#avatar {
+  width: 210px;
+  height: 210px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%; }
+
+/*white background of user imaes on homepage*/
+.white-panel {
+  background: #fff;
+  max-width: 290px;
+  padding: 20px 10px 20px 0px;
+  margin: 10px;
+  border-radius: 20px; }
+
+.name {
+  font-size: 10px; }
+
+.row {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+/************************/
+/****HOME PAGE**********/
+/**********************/
+.fa {
+  font-size: 60px;
+  color: #be9e21;
+  margin-top: 50px; }
+
+.description {
+  font-size: 20px;
+  font-weight: 600;
+  color: #be9e21; }
+
+.home {
+  color: grey; }
+
+.new-memebers {
+  margin-top: 50px;
+  margin-left: 100px; }
+
+/*# sourceMappingURL=app.css.map */

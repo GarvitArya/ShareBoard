@@ -1,21 +1,25 @@
-<div>
-	<?php if(isset($_SESSION['is_logged_in'])) : ?>
-	<a class="btn btn-success btn-share" href="<?php echo ROOT_PATH; ?>shares/add">Share Something</a>
-	<?php endif; ?>
 
-	<?php foreach($viewmodel as $item) : ?>
-		<div class="row">
-			<div class="col-md-2">
-				<img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
+<div class="row space"></div>
+
+<div class="row ">
+		<?php $counter=0;?>
+		<?php foreach($viewmodel as $item) : ?>
+
+			<!--orders 4 shares in a line-->
+			<?php if(($counter%4)== 0): ?>
+				<div class="col-lg-12 col-md-12  col-xs-12 line-space"></div>
+			<?php endif; ?>
+
+		<div class="col-lg-3 col-md-6 col-xs-12 share">
+			<div class="bubble">
+				<p style="cursor:pointer;" onclick="window.open('<?php echo $item['link']; ?>')"><?php echo $item['body']; ?></p>
+				<small><?php echo $item['create_date'] ." ,by ". $item['name'];?></small>
 			</div>
-			<div class="col-md-10">
-				<h3><?php echo $item['title']; ?></h3>
-				<small><?php echo $item['create_date'] ." ,by ". $item['user_id'];?></small>
-				<br />
-				<p><?php echo $item['body']; ?></p>
-				<br />
-				<a class="btn btn-default" href="<?php echo $item['link']; ?>" target="_blank">Go To Website</a>
-			</div>
+
+			<div id="profile" style="background-image:url('<?php echo ROOT_PATH; echo $item['image'];?>')"></div>
 		</div>
-	<?php endforeach; ?>
+
+		<?php $counter++; ?>
+		<?php endforeach; ?>
+
 </div>

@@ -1,10 +1,10 @@
 <?php
-/*
+/************************************************
 * takes in URL-Requets
 * processes controller and called actions
 * example: localhost/php7website/users/regsiter
 * action: register , controller:users
-*/
+************************************************/
 
 class Bootstrap{
 	private $controller;

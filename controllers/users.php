@@ -22,9 +22,5 @@ class Users extends Controller{
 		// Redirect
 		header('Location: '.ROOT_URL);
 	}
-/*
-	protected function Index(){
-		$viewmodel = new ShareModel();
-		$this->returnView($viewmodel->Index(), true);
-	}*/
+
 }

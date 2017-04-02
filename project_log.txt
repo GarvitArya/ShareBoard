@@ -1,4 +1,4 @@
-installation:
+﻿installation:
 
 -download and place folder "projectname"
 -in config.pop change the root_url to localhost/projectname
@@ -13,7 +13,18 @@ changes
 3.) im user modell neue function: settings
 4.) change nav ->add settings link in main.php
 5.) in users contoroller add function settings
+(...)
 
+Setup Sass
+-install a compiler tool like: Scout GUI for compass/sass : argument error -> need to install java and adobe AIR
+(url: mhs.github.io/scout-app/)
+- install ruby (ruby installer) and DevKit (for that create C:/DevKit/ and extract there)
+add ruby to your PATH (check in installer.exe)
+create new folder scss on same level as css
+inside new folder create app.scss
+start koala and include sass/scss the ncompile
+this will create a new file called app.css
+link this file in header of your html file as the last rel-tag
 
 Anmerkungen:
 zu punkt 2: passwort muss nicht unbedingt eingetragen werden
@@ -23,19 +34,3 @@ in index.php wird noch user_id angezeigt aber ich brauche den namen
 in settings function muss abgefrag werden ob neue email bereits vorhanden ist
 name kann nicht disabled werden
 
-
-<?php foreach($viewmodel as $item) : ?>
-  <div class="row-fluid">
-    <div class="col-md-2">
-      <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
-    </div>
-    <div class="col-md-10">
-      <h3><?php echo $item['title']; ?></h3>
-      <small><?php echo $item['create_date'] ." ,by ". $item['user_id'];?></small>
-      <br />
-      <p><?php echo $item['body']; ?></p>
-      <br />
-      <a class="btn btn-default" href="<?php echo $item['link']; ?>" target="_blank">Go To Website</a>
-    </div>
-  </div>
-<?php endforeach; ?>

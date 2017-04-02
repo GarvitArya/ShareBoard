@@ -2,13 +2,13 @@
   <div class="contact-form">
     <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
     	<div class="form-group">
-    		<input type="text" placeholder="Your Name" name="name" class="form-control" />
+    		<input type="text" autocomplete="off" placeholder="your name" name="name" class="form-control" />
     	</div>
     	<div class="form-group">
-    		<input type="text" name="email" placeholder="Your Email-Adress"  class="form-control" />
+    		<input type="text" autocomplete="off" name="email" placeholder="your email-adress"  class="form-control" />
     	</div>
     	<div class="form-group">
-    		<input type="password" placeholder="Password" name="password" class="form-control" />
+    		<input type="password" autocomplete="off" placeholder="password" name="password" class="form-control" />
     	</div>
     	  <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-submit">REGISTER</button>
     </form>

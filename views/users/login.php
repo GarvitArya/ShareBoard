@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="password" id="password" placeholder="password"/>
+                        <input type="password" class="form-control" autocomplete="off" name="password" id="password" placeholder="password"/>
                     </div>
                 </div>
                 <div class="col-md-12">

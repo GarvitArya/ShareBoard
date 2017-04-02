@@ -13,9 +13,11 @@ class UserModel extends Model{
 			}
 
 			// Insert into MySQL
-			$this->query('INSERT INTO users (name, email, password) VALUES(:name, :email, :password)');
+			$this->query('INSERT INTO users (name, email, image, password) VALUES(:name, :email, :image, :password)');
 			$this->bind(':name', $post['name']);
 			$this->bind(':email', $post['email']);
+			/*default picture is set by registration*/
+			$this->bind(':image', "/img/profile_images/default.png");
 			$this->bind(':password', $password);
 			$this->execute();
 			// Verify
@@ -64,11 +66,9 @@ class UserModel extends Model{
 		if($post['submit'])
 		{
 			$password = md5($post['password']);
-			if($post['name'])
-			// Compare Login
-			//username cannot be changed
-			$this->query('SELECT * FROM users WHERE name = :name AND password = :password');
-			$this->bind(':name', $post['name']);
+			//email cannot be changed
+			$this->query('SELECT * FROM users WHERE email = :email AND password = :password');
+			$this->bind(':email', $post['email']);
 			$this->bind(':password', $password);
 
 			$row = $this->single();
@@ -89,12 +89,53 @@ class UserModel extends Model{
 				return;
 			}
 
-			$this->query('UPDATE users  SET email=:email, password=:password, name=:name WHERE name =:name;');
+			/* ************
+			* image upload
+			***************/
+
+			$upload_folder = 'img/profile_images/';
+			$filename = $_FILES['file']['name'];
+			$extension = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
+
+
+			//check extentions
+			$allowed_extensions = array('png', 'jpg', 'jpeg', 'gif');
+			if(!in_array($extension, $allowed_extensions)) {
+				Messages::setMsg('Only png, jpg, jpeg allowed', 'error');
+ 			 	return;
+			}
+
+			$max_size = 1000*1024; //1000 KB
+			if($_FILES['file']['size'] > $max_size) {
+				Messages::setMsg('Your image file must be smaller than 1MB', 'error');
+				return;
+			}
+
+			//Upload folder path
+			$imgpath = $upload_folder.$filename;
+
+			//new file name in case file already exists
+			if(file_exists($imgpath)) {
+			 $id = 1;
+			 do {
+				 $imgpath = $upload_folder.$filename.'_'.$id.'.'.$extension;
+				 $id++;
+			 } while(file_exists($imgpath));
+			}
+
+			move_uploaded_file($_FILES['file']['tmp_name'], $imgpath);
+
+			/* endof image upload */
+
+			$this->query('UPDATE users  SET email=:email, password=:password, image=:image, name=:name WHERE email =:email;');
+			$this->bind(':image',$imgpath);
 			$this->bind(':email',$post['email']);
 			$this->bind(':name',$post['name']);
 			$this->bind(':password',$password);
 			$this->execute();
+			header('Location: '.ROOT_URL.'shares');
 		}
+
 		return;
 	}
 }
