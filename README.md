@@ -35,7 +35,6 @@ Email: suzi@gmail.com
 PW:1234
 
 ### Screenshots
--project is work in process so no screenshots available yet
 
 #### Full View:
 <p>
