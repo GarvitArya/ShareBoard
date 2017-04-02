@@ -27,12 +27,16 @@ some JS and jQuery for random colors for speech bubbles
 
 1.)Download and place in apache root directory
 for example in XAMPP :C:\xampp\htdocs
+
 2.) in config.php replace "projectname" with how you want to name your project
+
 3.) Import databse : "shareboard.sql"  
+
 4.) Download, install and start Koala. Open folder "sass" and compile
+
 5.) You can log in with
-Email: suzi@gmail.com 
-PW:1234
+- Email: suzi@gmail.com 
+- PW:1234
 
 ### Screenshots
 
