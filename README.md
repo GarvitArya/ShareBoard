@@ -3,6 +3,7 @@ Website where users can register, login and share interesting links and quotes o
 Build with PHP7, OOP, a small MVC. 
 Front-End responsive and mobile friendly with Bootstrap, basic CSS and SASS and Parallax Scrolling
 some JS and jQuery for random colors for speech bubbles
+Users can change their password and user profile picture (default user picture when new registration)
 
 ## Work in Pogress, Bugs:
 -needs password hashing (currently with Md5)
