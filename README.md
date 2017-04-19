@@ -35,7 +35,7 @@ for example in XAMPP :C:\xampp\htdocs
 
 4.) Download, install and start Koala. Open folder "sass" and compile
 
-5.) You can log in with
+5.) You can login with:
 - Email: suzi@gmail.com 
 - PW:1234
 
